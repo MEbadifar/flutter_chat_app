@@ -41,7 +41,7 @@ class MessageWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '$family',
+                  family,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
@@ -73,7 +73,7 @@ class MessageWidget extends StatelessWidget {
                       backgroundColor: Colors.green.shade600,
                       child: Text(
                         '$count',
-                        style: TextStyle(color: Colors.white),
+                        style:const  TextStyle(color: Colors.white),
                       ),
                     ),
             ],

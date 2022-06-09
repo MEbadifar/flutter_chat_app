@@ -39,20 +39,21 @@ class HomePage extends StatelessWidget {
               ),
               TextField(
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(27.0),
-                      gapPadding: 4,
-                    ),
-                    fillColor: Colors.white,
-                    labelStyle:
-                        TextStyle(color: Colors.grey[500], fontSize: 14.0),
-                    labelText: 'search',
-                    counterText: '',
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Colors.grey[500],
-                      size: 28.0,
-                    )),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(27.0),
+                    gapPadding: 4,
+                  ),
+                  fillColor: Colors.white,
+                  labelStyle:
+                      TextStyle(color: Colors.grey[500], fontSize: 14.0),
+                  labelText: 'search',
+                  counterText: '',
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.grey[500],
+                    size: 28.0,
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 15,

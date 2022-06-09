@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_chat_app/module/myprovider.dart';
+import 'package:flutter_chat_app/screens/login_page.dart';
+import 'package:provider/provider.dart';
 import 'screens/HomePage.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => MyProvider(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: context.watch<MyProvider>().user == null ? const Login() :const  HomePage(),
     );
   }
 }
