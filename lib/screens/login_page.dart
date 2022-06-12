@@ -62,10 +62,20 @@ class Login extends StatelessWidget {
                       child: const Text('Login'),
                       onPressed: () async {
                         try {
-                          context.read<MyProvider>().setLoading(true);
-                          context.read<MyProvider>().setUser(
-                              await User.authenticate(
-                                  '${_data['username']}', '${_data['pass']}'));
+                          try {
+                            context.read<MyProvider>().setLoading(true);
+                            context.read<MyProvider>().setUser(
+                                await User.authenticate('${_data['username']}',
+                                    '${_data['pass']}'));
+                          } catch (e) {
+                            final snackBar = SnackBar(
+                              content: Text(
+                                  '${e.toString().replaceAll('Exception:', '')}'),
+                              backgroundColor: Colors.red,
+                            );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          }
                         } finally {
                           context.read<MyProvider>().setLoading(false);
                         }
